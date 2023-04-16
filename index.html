@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+        <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    
+        <script defer src="predict.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>ML5 Neural Network Regression</title>
+    </head>
+    <body>
+        <h1>Hoe duur is de auto?</h1>
+        <div id="container">
+          <h2 class="question">Welke merk?</h2>
+          <p class="tip">Wat is de naam van de auto merk?</p>
+          <select name="CarName" id="CarName">
+            <option value="1">Alfa-Romero</option>
+            <option value="2">Audi</option>
+            <option value="3">BMW</option>
+            <option value="4">Dodge</option>
+            <option value="5">Honda</option>
+            <option value="6">Jaguar</option>
+            <option value="7">Mazda</option>
+            <option value="8">Buick</option>
+            <option value="9">Mitsubishi</option>
+            <option value="10">Nissan</option>
+            <option value="11">Peugeot</option>
+            <option value="12">Plymouth</option>
+            <option value="13">Porsche</option>
+            <option value="14">Saab</option>
+            <option value="15">Subaru</option>
+            <option value="16">Toyota</option>
+            <option value="17">Volkswagen</option>
+            <option value="18">Volvo</option>
+          </select>
+          
+          <h2>Wat gebruikt de auto?</h2>
+          <p class="tip">Gas of Diesel?</p>
+          <select name="fueltype" id="fueltype">
+            <option value="1">Gas</option>
+            <option value="2">Diesel</option>
+          </select>
+          
+          <h2>Hoeveel PK's?</h2>
+          <p class="tip">Hoeveel paardenkracht heeft de auto? Tussen 48 en 288</p>
+          <input type="number" id="horsepower" placeholder="Tussen 48 en 288"/>
+   
+
+          <h2>Hoeveel cilinders heeft de auto?</h2>
+          <select name="cylindernumber" id="cylindernumber">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+          </select>
+
+          <h2>Hoe groot is de engine</h2>
+          <p class="tip">Tussen 61 en 326</p>
+          <input type="number" id="enginesize" placeholder="enginesize" />
+
+          <h2>Hoe lang is de auto in inches</h2>
+          <p class="tip">Tussen 141 en 208</p>
+          <input type="number" id="carlength" placeholder="carlength" />
+
+          <h2>Wat voor soort drivewheel gebruikt de auto? </h2>
+          <select name="drivewheel" id="drivewheel">
+            <option value="1">Front Wheel Drive</option>
+            <option value="2">Rear Wheel Drive</option>
+            <option value="3">All Wheel Drive</option>
+          </select>
+
+          <h2>Wat voor soort auto is het?</h2>
+          <select name="carbody" id="carbody">
+            <option value="1">Sedan</option>
+            <option value="2">Hatchback</option>
+            <option value="3">Wagon</option>
+            <option value="4">Hardtop</option>
+            <option value="5">Convertible</option>
+          </select>
+
+          <h2>Hoeveel deuren heeft de auto?</h2>
+          <select name="doornumber" id="doornumber">
+            <option value="2">2</option>
+            <option value="4">4</option>
+          </select>
+
+          <button id="btn" type="submit">Voorspel</button>
+          
+          <div id="result">Antwoord kom hier te staan als je de button drukt</div>
+        </div>
+                
+      </body>
+</html>
